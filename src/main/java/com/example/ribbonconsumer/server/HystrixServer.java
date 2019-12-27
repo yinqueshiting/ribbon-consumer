@@ -90,4 +90,10 @@ public class HystrixServer {
         log.info("调用HystrixConsumerCache方法");
         return "";
     }
+
+    /*
+        请求合并：微服务架构中的依赖通常通过远程调用实现，远程调用中最常见的问题就是通信消耗与连接数占用
+                同时，依赖服务的线程池资源有限，将出现排队等候与响应延迟的情况。
+        对此Hystrix提供了HystrixCollapser来实现按请求的合并，以减少通信消耗和线程数的占用
+     */
 }
